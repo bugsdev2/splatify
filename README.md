@@ -1,8 +1,9 @@
-# React + Vite
+# Melodio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site live at: https://melodio-cyan.vercel.app/
 
-Currently, two official plugins are available:
+Trying to make a Music player app using the JioSaavn Api.
+The link to the JioSaavn Api is provided below. A huge thanks in advance to the developer for the Api. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://github.com/sumitkolhe/jiosaavn-api
+
