@@ -7,3 +7,7 @@
 	--bs-dark: #212529;
 	--bs-light: #F8F9FA;
 }
+
+body {
+	background: var(--bs-dark);
+}
