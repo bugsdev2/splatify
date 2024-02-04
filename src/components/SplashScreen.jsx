@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './SplashScreen.css'
-export default function SplashScreen(props){
+export default function SplashScreen(){
 	
 	const [flag, setFlag] = useState(true);
 	
@@ -12,7 +12,7 @@ export default function SplashScreen(props){
 		return (
 			<>
 				<div id="splashscreen" className="d-flex align-items-center gap-1">		
-					<img src="./icons/logo_with_name.svg" height='200'></img>
+					<img src="./icons/logo_with_name.png" width='200'></img>
 				</div>
 			</>
 		)
