@@ -10,11 +10,11 @@ export default function SplashScreen(){
 	
 	if(flag){
 		return (
-			<>
+			<div id="splashscreen-container">
 				<div id="splashscreen" className="d-flex align-items-center gap-1">		
 					<img src="./icons/logo_with_name.png" width='200'></img>
 				</div>
-			</>
+			</div>
 		)
 	} else {
 		 return false;
