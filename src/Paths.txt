@@ -1,0 +1,36 @@
+Paths 
+
+TITLE			TYPE			PATH
+SUCCESS/FAILURE		boolean			.success
+TOP QUERY		Object			.data?.topQuery
+TOP QUERY RESULTS	Array			.data?.topQuery?.results
+
+Within Top Query Results ( result of .data?.topQuery?.results[0] ):
+( Can be read by .data?.topQuery?.results[0].title )
+
+        {
+          "id": "csaEsVWV", // string
+          "title": "Kun Faaya Kun", // string
+          "image": [
+            {
+              "quality": "50x50",
+              "url": "https://c.saavncdn.com/408/Rockstar-Hindi-2011-20221212023139-50x50.jpg"
+            },
+            {
+              "quality": "150x150",
+              "url": "https://c.saavncdn.com/408/Rockstar-Hindi-2011-20221212023139-150x150.jpg"
+            },
+            {
+              "quality": "500x500",
+              "url": "https://c.saavncdn.com/408/Rockstar-Hindi-2011-20221212023139-500x500.jpg"
+            }
+          ], // { quality: string, url: string }[]
+          "album": "Rockstar", // string
+          "url": "https://www.jiosaavn.com/song/kun-faaya-kun/ExsKdAdmYGU", // string
+          "type": "song", // string
+          "language": "hindi", // string
+          "description": "Song by A.R. Rahman, Javed Ali and Mohit Chauhan", // string
+          "primaryArtists": "A.R. Rahman, Javed Ali, Mohit Chauhan", // string
+          "singers": "Javed Ali, Mohit Chauhan, A.R. Rahman" // string
+        }
+
