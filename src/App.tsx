@@ -12,7 +12,7 @@ export default function App() {
             <SearchQueryContext.Provider value={[searchQuery, setSearchQuery]}>
                 <SplashScreen />
                 <SearchPage />
-                {/* <Player /> */}
+                <Player />
             </SearchQueryContext.Provider>
         </>
     );

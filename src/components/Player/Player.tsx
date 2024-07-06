@@ -4,7 +4,7 @@ import '../../../src/styles.css';
 export default function Player() {
     const [songUrl, setSongUrl] = React.useState();
     useEffect(() => {
-        fetch('https://jiosaavn-api-clone-phi.vercel.app/search/songs?query=kun+faya+kun&page=1&limit=1')
+        fetch('https://jiosaavn-api-clone-phi.vercel.app/search/songs?query=thendral&page=1&limit=1')
             .then((res) => res.json())
             .then((data) => {
                 setSongUrl(data.data.results[0].downloadUrl[2].link);
@@ -13,7 +13,30 @@ export default function Player() {
 
     var audio = new Audio(songUrl);
 
+    function formatTimeDuration(audio: HTMLAudioElement) {
+        let sec = audio.duration;
+        let hr = Math.floor(sec / 3600);
+        let min = sec / 60;
+        let modMin = Math.floor(min);
+        let modSec = Math.floor((min - modMin) * 60);
+        console.log(modMin, ':', modSec);
+    }
+
+    function formatCurrentTime(audio) {
+        let sec = audio.currentTime;
+        let hr = Math.floor(sec / 3600);
+        let min = sec / 60;
+        let modMin = Math.floor(min);
+        let modSec = Math.floor((min - modMin) * 60);
+        console.log(modMin, ':', modSec);
+    }
+
     function handlePlay() {
+        console.log(audio.duration);
+        // formatTimeDuration(audio);
+        setInterval(() => formatCurrentTime(audio), 1000);
+        console.log(audio.currentTime);
+        console.log(audio.currentSrc);
         audio.play();
     }
 
@@ -30,7 +53,7 @@ export default function Player() {
     }
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 p-4 bg-dark ">
+        <div className="fixed bottom-0 left-0 right-0 p-4 bg-darker border-t-2 border-slate-400">
             <h1 className="text-center">Kun Faya Kun</h1>
             <div className="text-light">
                 <input type="range" name="" id="" className="w-full" value="173" max="489" onChange={() => {}} />
