@@ -10,7 +10,7 @@ export default function App() {
     return (
         <>
             <SearchQueryContext.Provider value={[searchQuery, setSearchQuery]}>
-                <SplashScreen />
+                {/* <SplashScreen /> */}
                 <SearchPage />
                 <Player />
             </SearchQueryContext.Provider>

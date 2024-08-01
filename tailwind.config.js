@@ -15,7 +15,7 @@ export default {
                     100: '#35A38E',
                     200: '#038281',
                 },
-                dark: '#1F2937',
+                darker: '#1F2937',
                 light: '#E2E8F0',
             },
             fontFamily: {

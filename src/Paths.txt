@@ -1,9 +1,9 @@
 Paths 
 
-TITLE			TYPE			PATH
-SUCCESS/FAILURE		boolean			.success
-TOP QUERY		Object			.data?.topQuery
-TOP QUERY RESULTS	Array			.data?.topQuery?.results
+TITLE			          TYPE			    PATH
+SUCCESS/FAILURE		  boolean			.success
+TOP QUERY		        Object			.data?.topQuery
+TOP QUERY RESULTS	  Array			  .data?.topQuery?.results
 
 Within Top Query Results ( result of .data?.topQuery?.results[0] ):
 ( Can be read by .data?.topQuery?.results[0].title )

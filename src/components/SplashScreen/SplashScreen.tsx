@@ -9,7 +9,7 @@ export default function SplashScreen() {
 
     if (flag) {
         return (
-            <div id="splashscreen-container" className="z-50 h-[100dvh]">
+            <div id="splashscreen-container" className="z-100 h-[100dvh] bg-dark">
                 <div id="splashscreen" className="d-flex align-items-center gap-1">
                     <img src="./icons/logo_with_name.png" width="200"></img>
                 </div>
