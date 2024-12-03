@@ -1,37 +1,96 @@
+import { StyleSheet, Text, View } from 'react-native';
 import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { Ionicons } from '@expo/vector-icons';
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+const TabsLayout = () => {
+  const CustomIcon = ({ title, icon, focused }: { title: string; icon: any; focused: boolean }) => {
+    return (
+      <View>
+        <View style={[styles.iconContainer, { backgroundColor: focused ? Colors.lightBlue : Colors.white }]}>
+          <Ionicons
+            name={icon}
+            size={30}
+            color={focused ? Colors.white : Colors.gray}
+          />
+          {focused && <Text style={{ color: Colors.white, fontFamily: 'OswaldB' }}>{title}</Text>}
+        </View>
+      </View>
+    );
+  };
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
+    <>
+      <Tabs
+        screenOptions={{
+          tabBarShowLabel: false,
+          headerStyle: {
+            backgroundColor: Colors.lightBlue,
+          },
+          headerTitleStyle: { fontFamily: 'OswaldB', fontSize: 30, color: Colors.white },
+          tabBarStyle: {
+            height: 75,
+          },
         }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="home"
+          options={{
+            title: 'Home',
+            headerTitleAlign: 'center',
+            headerTitle: 'Melodio',
+            tabBarIcon: ({ focused }) => (
+              <CustomIcon
+                title="Home"
+                icon="home"
+                focused={focused}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="search"
+          options={{
+            title: 'Search',
+            headerTitleAlign: 'center',
+            tabBarIcon: ({ focused }) => (
+              <CustomIcon
+                title="Search"
+                icon="search"
+                focused={focused}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="settings"
+          options={{
+            title: 'Settings',
+            headerTitleAlign: 'center',
+            tabBarIcon: ({ focused }) => (
+              <CustomIcon
+                title="Settings"
+                icon="settings"
+                focused={focused}
+              />
+            ),
+          }}
+        />
+      </Tabs>
+    </>
   );
-}
+};
+
+export default TabsLayout;
+
+const styles = StyleSheet.create({
+  iconContainer: {
+    paddingHorizontal: 10,
+    height: 70,
+    borderRadius: 30,
+    width: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
